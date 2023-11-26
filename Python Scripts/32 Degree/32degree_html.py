@@ -1,8 +1,10 @@
 # Name: Brian Haines/ KC
+# Modified By: Austin Rebello
 # Date: 2/3/2017
 # Purpose: Create a script that requests 32 degree information makes html and pdf files
 # Version/ update history:
 #    1) 2/21/2017- Finished! 
+#    2) 11-26-2023: Updated code to Python3 and for NWS CLE, made code more dynamic, fixed bugs with data clensing
 
 #######################################
 # Import modules required by Acis
@@ -10,10 +12,6 @@ import urllib.request as urlL
 import json
 #######################################
 #######################################
-# Import plotting tools
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import matplotlib.ticker as ticker
 import datetime
 import time
 import numpy as np

@@ -1,4 +1,5 @@
 # Name: Brian Haines
+# Modified By: Austin Rebello
 # Date: 11/24/16
 # Purpose: Create a script that requests 90 degree information
 # Version/ update history:
@@ -7,6 +8,7 @@
 #                 formatting
 #    3) 1-13-17: Finished editing code with files being outputted to O drive
 #    4) 1-21-17: Updated output directory and changed normal in a year to float (allow decimals)
+#    5) 11-26-2023: Updated code to Python3 and for NWS CLE, made code more dynamic, fixed bugs with data clensing
 
 #######################################
 # Import modules required by Acis
@@ -15,10 +17,6 @@ import json
 import re
 #######################################
 #######################################
-# Import plotting tools
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import matplotlib.ticker as ticker
 import datetime
 import time
 import numpy as np

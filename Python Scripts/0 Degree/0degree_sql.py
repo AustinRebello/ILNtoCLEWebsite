@@ -1,27 +1,19 @@
 # Name: Brian Haines
+# Modified By: Austin Rebello
 # Date: 11/28/15
-# Purpose: Create a script that imports 32 degree data into sql
+# Purpose: Create a script that imports 0 degree data into sql
 # Version/ update history:
 #        1) 2/21/17- Completed!
-#        2) Script imports number of 32 degree days and 32 degree day highs into sql
+#        2) Script imports number of 0 degree days and 0 degree day highs into sql
+#        3) 11-26-2023: Formatted to Python3 and NWS CLE, made code more dynamic
 
 #######################################
 #Import modules required by Acis
 import urllib.request as urlL
 import json
-#######################################
-#######################################
-#Import plotting tools
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import matplotlib.ticker as ticker
-import datetime
-import numpy as np
-import math
-#######################################
+import mysql.connector
 #######################################
 #MY SQL Code block
-import mysql.connector
 cnx = mysql.connector.connect(user='austinrebello', password='mysql',
                               host='localhost',
                               database='climate') 

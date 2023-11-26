@@ -1,26 +1,19 @@
 # Name: Brian Haines
+# Modified By: Austin Rebello
 # Date: 11/28/15
 # Purpose: Code that gets and populates 90 degree sql database
 # Version/ update history:
 #        1) File completed!
+#        2) 11-26-2023: Formatted to Python3 and NWS CLE, made code more dynamic
 
 #######################################
 #Import modules required by Acis
 import urllib.request as urlL
 import json
-#######################################
-#######################################
-#Import plotting tools
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import matplotlib.ticker as ticker
-import datetime
-import numpy as np
-import math
-#######################################
+import mysql.connector
 #######################################
 #MY SQL Code block
-import mysql.connector
+
 cnx = mysql.connector.connect(user='austinrebello', password='mysql',
                               host='localhost',
                               database='climate')

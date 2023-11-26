@@ -1,8 +1,11 @@
 # Name: Brian Haines
+# Modified By: Austin Rebello
 # Date: 8/11/2015
-# Purpose: Create a script that requests record data from xmacis and makes html files
+# Purpose: Create a script that requests record data from xmacis and makes html/pdf files
 # Version/ update history:
 #    1) 8-8-15: Script completed!
+#    2) 11-23-23: Austin Rebello has modified this code to work in Python3 for NWS CLE instead of NWS ILN;
+#                   I shortened the code to increase readability and make the sites pulled fully dynamic.
 
 #######################################
 #Import modules required by Acis
@@ -10,10 +13,6 @@ import urllib.request as urlL
 import json
 #######################################
 #######################################
-#Import plotting tools
-#import matplotlib.pyplot as plt
-#import matplotlib.dates as mdates
-#import matplotlib.ticker as ticker
 import datetime
 import time
 #import numpy as np
@@ -48,8 +47,7 @@ def my_round(x):
 ###################################################
 def run_script(site):
     if __name__ == "__main__":
-        ### Defined Constants ###
-        degree_sign= u'\N{DEGREE SIGN}' # The symbol for degrees
+        ### Defined Constants ###=
         mydate = datetime.datetime.now()
         cm = mydate.strftime("%B") # Current month
         current_date = (time.strftime("%Y-%m-%d"))

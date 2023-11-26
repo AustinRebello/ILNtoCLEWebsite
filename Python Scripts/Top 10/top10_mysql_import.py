@@ -35,6 +35,7 @@ cnx.commit()
 #######################################
 #Set Acis data server
 base_url = "http://data.rcc-acis.org/"
+sites = ["cak","cle","eri","mfd","tol","yng"]
 #######################################
 #Acis WebServices functions
 #######################################
@@ -56,19 +57,23 @@ def my_round(x):
 ###################################################
 #M A I N
 ###################################################
-if __name__ == "__main__":
+def sqlSite(site):
     
    #Set parameters for data request
-    params_cvg = {"sid":"CVGthr","sdate":"por","edate":"por","elems":[{"name":"avgt","interval":"mly","duration":"mly","reduce":{"reduce":"mean","add":"mcnt"},"maxmissing":0},{"name":"pcpn","interval":"mly","duration":"mly","reduce":{"reduce":"sum","add":"mcnt"},"maxmissing":0},{"name":"snow","interval":"mly","duration":"mly","reduce":{"reduce":"sum","add":"mcnt"},"maxmissing":0}]}
-    params_cmh ={"sid":"CMHthr","sdate":"por","edate":"por","elems":[{"name":"avgt","interval":"mly","duration":"mly","reduce":{"reduce":"mean","add":"mcnt"},"maxmissing":0},{"name":"pcpn","interval":"mly","duration":"mly","reduce":{"reduce":"sum","add":"mcnt"},"maxmissing":0},{"name":"snow","interval":"mly","duration":"mly","reduce":{"reduce":"sum","add":"mcnt"},"maxmissing":0}]}
-    params_day ={"sid":"DAYthr","sdate":"por","edate":"por","elems":[{"name":"avgt","interval":"mly","duration":"mly","reduce":{"reduce":"mean","add":"mcnt"},"maxmissing":0},{"name":"pcpn","interval":"mly","duration":"mly","reduce":{"reduce":"sum","add":"mcnt"},"maxmissing":0},{"name":"snow","interval":"mly","duration":"mly","reduce":{"reduce":"sum","add":"mcnt"},"maxmissing":0}]}
+    params_monthly = {"sid":site.upper()+"thr","sdate":"por","edate":"por","elems":[{"name":"avgt","interval":"mly","duration":"mly","reduce":{"reduce":"mean","add":"mcnt"},"maxmissing":0},{"name":"pcpn","interval":"mly","duration":"mly","reduce":{"reduce":"sum","add":"mcnt"},"maxmissing":0},{"name":"snow","interval":"mly","duration":"mly","reduce":{"reduce":"sum","add":"mcnt"},"maxmissing":0}]}
+    #params_seasonally ={"sid":site.upper()+"thr","sdate":"por","edate":"por","elems":[{"name":"avgt","interval":"mly","duration":"mly","reduce":{"reduce":"mean","add":"mcnt"},"maxmissing":0},{"name":"pcpn","interval":"mly","duration":"mly","reduce":{"reduce":"sum","add":"mcnt"},"maxmissing":0},{"name":"snow","interval":"mly","duration":"mly","reduce":{"reduce":"sum","add":"mcnt"},"maxmissing":0}]}
+    params_yearly ={"sid":site.upper()+"thr","sdate":"por","edate":"por","elems":[{"name":"avgt","interval":[1,0],"duration":12,"reduce":{"reduce":"mean","add":"mcnt"},"maxmissing":0},{"name":"pcpn","interval":[1,0],"duration":12,"reduce":{"reduce":"sum","add":"mcnt"},"maxmissing":0},{"name":"snow","interval":[1,0],"duration":12,"reduce":{"reduce":"sum","add":"mcnt"},"maxmissing":0}]}
     
-    data_cvg = GridData(params_cvg)
-    data_cmh = GridData(params_cmh)
-    data_day = GridData(params_day)
+    #"elems":[{"interval":[1,0],"duration":3,"name":"snow","reduce":{"reduce":"sum","add":"mcnt"},"maxmissing":"1","prec":3}],"sid":"BWIthr 9","sDate":"1850-02","eDate":"2023-02"}
+    #https://xmacis.rcc-acis.org/
+    
+    
+    data_monthly = GridData(params_monthly)
+    #data_cmh = GridData(params_cmh)
+    data_yearly = GridData(params_yearly)
     
     #CVG
-    for d in data_cvg['data']:
+    for d in data_monthly['data']:
         for i in range(0, len(d)):
             if (i == 0):
                 yearmonth = str(d[0]).split('-')
@@ -91,13 +96,13 @@ if __name__ == "__main__":
                 snow_sum = str(snow[0].strip(" [\t\n\r u ' "))
                 snow_avg_miss = str(snow[1].strip(" ]\t\n\r u ' "))
                 #print snow_sum
-        sql_cvg = "INSERT INTO kcvg_monthly(Datetime, Year, Month, Monthly_Temp_Avg, Monthly_Precip_Total, Monthly_Snow_Total) VALUES ( '" + datetime + "', '" +  year + "', '" +  month +"', '" +  temp_avg +"', '" + precip_sum  +"', '" +  snow_sum + "')"  
+        sql_cvg = "INSERT INTO "+site+"_monthly(Datetime, Year, Month, Monthly_Temp_Avg, Monthly_Precip_Total, Monthly_Snow_Total) VALUES ( '" + datetime + "', '" +  year + "', '" +  month +"', '" +  temp_avg +"', '" + precip_sum  +"', '" +  snow_sum + "')"  
         print(sql_cvg)
-        #cursor.execute(sql_cvg)
-        #cnx.commit()
+        cursor.execute(sql_cvg)
+        cnx.commit()
 
     #CMH
-    for d in data_cmh['data']:
+    """for d in data_cmh['data']:
         for i in range(0, len(d)):
             if (i == 0):
                 yearmonth = str(d[0]).split('-')
@@ -120,18 +125,17 @@ if __name__ == "__main__":
                 snow_sum = str(snow[0].strip(" [\t\n\r u ' "))
                 snow_avg_miss = str(snow[1].strip(" ]\t\n\r u ' "))
                 #print snow_sum
-        sql_cmh = "INSERT INTO kcmh_monthly(Datetime, Year, Month, Monthly_Temp_Avg, Monthly_Precip_Total, Monthly_Snow_Total) VALUES ( '" + datetime + "', '" +  year + "', '" +  month +"', '" +  temp_avg +"', '" + precip_sum  +"', '" +  snow_sum + "')"
+        sql_cmh = "INSERT INTO "+site+"_years(Datetime, Year, Season,  Seasonal_Temp_Avg, Seasonal_Precip_Total, Seasonal_Snow_Total) VALUES ( '" + datetime + "', '" +  year + "', '" +  month +"', '" +  temp_avg +"', '" + precip_sum  +"', '" +  snow_sum + "')"
 
-        #cursor.execute(sql_cmh)
-        #cnx.commit()
+        cursor.execute(sql_cmh)
+        cnx.commit()"""
 
     #DAY
-    for d in data_day['data']:
+    for d in data_yearly['data']:
         for i in range(0, len(d)):
             if (i == 0):
                 yearmonth = str(d[0]).split('-')
                 year = yearmonth[0]
-                month = yearmonth[1]
                 datetime = year + month
                 #print month, year
             elif (i == 1):
@@ -149,13 +153,18 @@ if __name__ == "__main__":
                 snow_sum = str(snow[0].strip(" [\t\n\r u ' "))
                 snow_avg_miss = str(snow[1].strip(" ]\t\n\r u ' "))
                 #print snow_sum
-        sql_day = "INSERT INTO kday_monthly(Datetime, Year, Month, Monthly_Temp_Avg, Monthly_Precip_Total, Monthly_Snow_Total) VALUES ( '" + datetime + "', '" +  year + "', '" +  month +"', '" +  temp_avg +"', '" + precip_sum  +"', '" +  snow_sum + "')"
+        sql_day = "INSERT INTO "+site+"_seasonally(Datetime, Year, Yearly_Temp_Avg, Yearly_Precip_Total, Yearly_Snow_Total) VALUES ( '" + datetime + "', '" +  year + "', '" +  temp_avg +"', '" + precip_sum  +"', '" +  snow_sum + "')"
 
-        #cursor.execute(sql_day)
-        #cnx.commit()
+        cursor.execute(sql_day)
+        cnx.commit()
 
     # Close Connection
-    #cursor.close()
-    #cnx.close()
+    cursor.close()
+    cnx.close()
+    
+    
+    
+for site in sites:
+    sqlSite(site)
 
 

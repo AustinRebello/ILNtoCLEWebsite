@@ -1,4 +1,5 @@
 # Name: Brian Haines
+# Modified By: Austin Rebello
 # Date: 1/16/2017
 # Purpose: Create a script that requests 100 degree information
 # Version/ update history:
@@ -7,6 +8,7 @@
 #    *** Still need to look at por date for Longest 100 degree strech ***
 #    *** Add max missing to code? ***
 #    3) 2-21-2017: Updated por date for 100 stretch. Also updated path output and float for normal
+#    4) 11-26-2023: Updated code to Python3 and for NWS CLE, made code more dynamic, fixed bugs with data clensing
 
 #######################################
 # Import modules required by Acis
@@ -14,10 +16,6 @@ import urllib.request as urlL
 import json
 #######################################
 #######################################
-# Import plotting tools
-import matplotlib.pyplot as plt
-import matplotlib.dates as mdates
-import matplotlib.ticker as ticker
 import datetime
 import time
 import numpy as np
