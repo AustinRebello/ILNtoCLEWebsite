@@ -1,0 +1,245 @@
+<!-- Author: Brian Haines and Kristen Cassady
+     Date: 3/15/15
+	 Purpose: Create master climate webpage
+	 Version History
+		1) 5/2/15: Changed image size to 100% and not a given pixel size. Given pixel sizes
+				caused table to not all fit on browser when uploaded to new CMS
+		2) 5/30/15: ACTIVATED normals and more_graphs sections for CVG/ CMH/ DAY
+		3) 6/7/15: ACTIVATED records sections for CVG/ CMH/ DAY
+		4) 6/14/15: Started process of coding average monthly/ yearly temp on webpage
+		5) 7/3/15: Added code for pdfs of average monthly/ yearly temps for each of the 3 primary climate sites
+		6) 7/3/15: Activated top 10 links
+		7) 2/27/17: Kristen redesign going live
+		8) 3/14/17: Added title back into webpage due to request by region
+--><!-- // CONTENT STARTS HERE -->
+
+<script>
+$(document).ready(function(){
+//$('.header').remove(); // NWS logo at top
+//$('.content').remove(); //Add top menu toolbar and lines below
+//$('.header-shadow').remove(); //Shadow beneath top shadow
+//$('.topMenuNavList').remove(); //Main top toolbar
+//$('#zipcity_news').remove(); //Zip input and associated WFO news headlines
+$('.subMenuNav').remove(); // Local wfo submenu
+$('#myfcst-widget').remove();
+//$('.breadcrumb').remove(); // Local WFO title bar
+//$('#image_tiles').remove();
+$('.full-width-border').css('border-top', 'white');
+//$('.partial-width-borderbottom').css('border-bottom', 'white');
+$('.five-sixth-first').css({ 'width' : '100%', 'padding-right': '0px', 'padding-left': '0px' }); });
+//$('#sidebar').remove(); $('#pagebody').css('margin-top', '0px'); 
+//$('.cms-content').css('margin-top', '0px');
+</script>
+
+<style type="text/css">
+P.title {
+	font-size: 24px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	font-weight: bold;
+}
+IMG.toolbar {
+    border-radius: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	border: 2px;
+	border-color: #000000;
+	background-color:#ffffff;
+	border-width: 1px;
+	border-style: solid;
+	padding: 4px;
+	-webkit-box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+	-moz-box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+	box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	cursor: pointer;	
+}
+IMG.toolbar:hover {
+	-webkit-box-shadow: 0 0 0px rgba(132, 132, 132, .75);
+	-moz-box-shadow: 0 0 0px rgba(132, 132, 132, .75);
+	box-shadow: 0 0 0px rgba(132, 132, 132, .75);
+}
+P.sectiontitle {
+	font-size: 18px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+}
+P.section2title {
+	font-size: 16px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: left;
+}
+P.addresstitle {
+	font-size: 16px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: left;
+}
+P.celltitle {
+	font-size: 24px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	color: white;
+	font-weight: bold;
+	vertical-align: middle;
+}
+P.cellvalue {
+	font-size: 14px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	color: black;
+	font-weight: bold;
+	vertical-align: middle;
+}
+table.table1 {
+    border: 1px solid black;
+}
+iframe {
+  -moz-transform: scale(1.25, 1); 
+  -webkit-transform: scale(1, 1); 
+  -o-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1); 
+  -moz-transform-origin: left;
+  -webkit-transform-origin: middle;
+  -o-transform-origin: middle;
+  -ms-transform-origin: middle;
+  transform-origin: middle;
+}
+table.table2 {
+    border-collapse:collapse;
+}
+a.sectiontitle {
+	font-size: 16px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: left;
+}
+</style>	
+
+<p class="title">Wilmington, OH Climate Page</p>
+
+<p class="sectiontitle">Climate data on this page is PRELIMINARY (unofficial). CERTIFIED (official) climate data is available from the <a href="http://www.ncdc.noaa.gov" target="_new" title="National Climatic Data Center (NCDC)">National Climatic Data Center (NCDC)</a>.</p>
+
+<p class="addresstitle"><i>Questions/Comments concerning this data should be sent to <a href="mailto:seth.binau@noaa.gov,brian.haines@noaa.gov">Seth Binau and Brian Haines</a>.</i></p>
+
+<p class="section2title">For archived regional monthly climate summaries, click <a href="http://www.weather.gov/iln/climatesummaries" target="_new" title="here">here</a>.</p>
+
+<p>&nbsp;</p>
+
+<table border="1" width="950px" table class="table1">
+	<tbody>
+		<tr>
+			<td align="center" valign="center" bgcolor="gray" colspan="8"><p class="celltitle">Cincinnati (KCVG) </p></td>
+		</tr>
+		<tr>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/lcd_archive"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/LCDArchive.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/climate_graphs_cvg"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/MoreGraphs.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/climate_normals_cvg"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/Normals.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/climate_records_cvg"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/Records.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/climate_top10_cvg"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/Top10.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/CVG_ExtremeClimo"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/ExtremeClimo.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/HolidayClimoCVG"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/HolidayClimo.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/SnowClimoCVG"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/Snow.PNG" /></a></td>
+		</tr>
+		<!-- Current average yearly temp and monthly temp -->
+		<tr>
+			<td colspan="8" style="vertical-align:middle;text-align:center"><object data="http://www.weather.gov/media/iln/climo_webpage/cvg_avg_temp.pdf#zoom=70&amp;messages=0&amp;navpanes=0" height="70%" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/cvg_avg_temp.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+		<!-- Current climate image plots -->
+		<tr>
+			<td width="45%" colspan="4">
+			<p align="center"><a href="http://www.weather.gov/images/iln/climo/cliplot/KCVG_calendar_year_all_plot.png"><img alt="CVG Year To Date Graph" border="0" height="100%" src="http://www.weather.gov/images/iln/climo/cliplot/KCVG_calendar_year_all_plot.png" width="100%" /></a></p>
+			</td>
+			<td width="45%" colspan="4">
+			<p align="center"><a href="http://www.weather.gov/images/iln/climo/cliplot/KCVG_current_month_temperature_plot-2.png"><img alt="CVG Current Month Graph" border="0" height="100%" name="CLIIMAGECVG" src="http://www.weather.gov/images/iln/climo/cliplot/KCVG_current_month_temperature_plot-2.png" width="100%" /></a></p>
+
+			<table table class="table2" width="100%" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td border="0" colspan="5" align="center"><a class="sectiontitle" href="http://www.weather.gov/images/iln/climo/cliplot/KCVG_current_month_temperature_plot-2.png" onmouseover="document.CLIIMAGECVG.src='http://www.weather.gov/images/iln/climo/cliplot/KCVG_current_month_temperature_plot-2.png';">Temperature</a></td>
+						<td border="0" colspan="3" align="center"><a class="sectiontitle" href="http://www.weather.gov/images/iln/climo/cliplot/KCVG_31_day_precip_plot-2.png" onmouseover="document.CLIIMAGECVG.src='http://www.weather.gov/images/iln/climo/cliplot/KCVG_31_day_precip_plot-2.png';">Precipitation</a></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td border="0" colspan="8" align="center" valign="center" bgcolor="gray"><p class="celltitle">Columbus (KCMH)</p></td>
+		</tr>
+		<tr>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/lcd_archive"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/LCDArchive.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/climate_graphs_cmh"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/MoreGraphs.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/climate_normals_cmh"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/Normals.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/climate_records_cmh"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/Records.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/climate_top10_cmh"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/Top10.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/CMH_ExtremeClimo"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/ExtremeClimo.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/HolidayClimoCMH"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/HolidayClimo.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/SnowClimoCMH"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/Snow.PNG" /></a></td>
+		</tr>
+		<!-- Current average yearly temp and monthly temp -->
+		<tr>
+			<td colspan="8" style="vertical-align:middle;text-align:center"><object data="http://www.weather.gov/media/iln/climo_webpage/cmh_avg_temp.pdf#zoom=70&amp;messages=0&amp;navpanes=0" height="70%" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/cmh_avg_temp.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+		<!-- Current climate image plots -->
+		<tr>
+			<td colspan="4">
+			<p align="center"><a href="http://www.weather.gov/images/iln/climo/cliplot/KCMH_calendar_year_all_plot.png"><img alt="CMH Year To Date Graph" border="0" height="100%" src="http://www.weather.gov/images/iln/climo/cliplot/KCMH_calendar_year_all_plot.png" width="100%" /></a></p>
+			</td>
+			<td colspan="4">
+			<p align="center"><a href="http://www.weather.gov/images/iln/climo/cliplot/KCMH_current_month_temperature_plot-2.png"><img alt="CMH Current Month Graph" border="0" height="100%" name="CLIIMAGECMH" src="http://www.weather.gov/images/iln/climo/cliplot/KCMH_current_month_temperature_plot-2.png" width="100%" /></a></p>
+
+			<table width="100%">
+				<tbody>
+					<tr>
+						<td align="center"><a class="sectiontitle" href="http://www.weather.gov/images/iln/climo/cliplot/KCMH_current_month_temperature_plot-2.png" onmouseover="document.CLIIMAGECMH.src='http://www.weather.gov/images/iln/climo/cliplot/KCMH_current_month_temperature_plot-2.png';">Temperature</a></td>
+						<td align="center"><a class="sectiontitle" href="http://www.weather.gov/images/iln/climo/cliplot/KCMH_31_day_precip_plot-2.png" onmouseover="document.CLIIMAGECMH.src='http://www.weather.gov/images/iln/climo/cliplot/KCMH_31_day_precip_plot-2.png';">Precipitation</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</tr>
+		<tr>
+			<td colspan="8" align="center" valign="center" bgcolor="gray"><p class="celltitle">Dayton (KDAY)</p></td>
+		</tr>
+		<tr>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/lcd_archive"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/LCDArchive.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/climate_graphs_day"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/MoreGraphs.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/climate_normals_day"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/Normals.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/climate_records_day"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/Records.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/climate_top10_day"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/Top10.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/DAY_ExtremeClimo"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/ExtremeClimo.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/HolidayClimoDAY"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/HolidayClimo.PNG" /></a></td>
+			<td border="0" style="vertical-align:middle;text-align:center;font-weight:bold;font-size:large"><a href="http://www.weather.gov/iln/SnowClimoDAY"><img class="toolbar" style="width: 95px; height: 40px;" src="http://www.weather.gov/images/iln/climo/climate_page/Snow.PNG" /></a></td>
+		</tr>
+		<!-- Current average yearly temp and monthly temp -->
+		<tr>
+			<td colspan="8" style="vertical-align:middle;text-align:center"><object data="http://www.weather.gov/media/iln/climo_webpage/day_avg_temp.pdf#zoom=70&amp;messages=0&amp;navpanes=0" height="70%" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/day_avg_temp.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+		<!-- Current climate image plots -->
+		<tr>
+			<td colspan="4">
+			<p align="center"><a href="http://www.weather.gov/images/iln/climo/cliplot/KDAY_calendar_year_all_plot.png"><img alt="DAY Year To Date Graph" border="0" height="100%" src="http://www.weather.gov/images/iln/climo/cliplot/KDAY_calendar_year_all_plot.png" width="100%" /></a></p>
+			</td>
+			<td colspan="4">
+			<p align="center"><a href="http://www.weather.gov/images/iln/climo/cliplot/KDAY_current_month_temperature_plot-2.png"><img alt="DAY Current Month Graph" border="0" height="100%" name="CLIIMAGEDAY" src="http://www.weather.gov/images/iln/climo/cliplot/KDAY_current_month_temperature_plot-2.png" width="100%" /></a></p>
+
+			<table width="100%">
+				<tbody>
+					<tr>
+						<td align="center"><a class="sectiontitle" href="http://www.weather.gov/images/iln/climo/cliplot/KDAY_current_month_temperature_plot-2.png" onmouseover="document.CLIIMAGEDAY.src='http://www.weather.gov/images/iln/climo/cliplot/KDAY_current_month_temperature_plot-2.png';">Temperature</a></td>
+						<td align="center"><a class="sectiontitle" href="http://www.weather.gov/images/iln/climo/cliplot/KDAY_31_day_precip_plot-2.png" onmouseover="document.CLIIMAGEDAY.src='http://www.weather.gov/images/iln/climo/cliplot/KDAY_31_day_precip_plot-2.png';">Precipitation</a></td>
+					</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!-- // CONTENT ENDS HERE -->

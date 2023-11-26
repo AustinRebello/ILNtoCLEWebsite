@@ -1,0 +1,1 @@
+All html and txt files that get converted to pdfs go here. So all extra pdf additions to html code go in here.

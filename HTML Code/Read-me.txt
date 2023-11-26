@@ -1,0 +1,1 @@
+All of the html code for the given files reside in here. When updating HTML files on the CMS keep local copy updated here.

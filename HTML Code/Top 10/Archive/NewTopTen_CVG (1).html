@@ -1,0 +1,775 @@
+<!--- Author: Brian Haines/ Kristen C
+     Date: 4/18/15
+	 Purpose: Climate records CVG page
+	 Version History
+		1) 5/31/15: Started intial setup of page
+		2) 6/6/15: Updated Month header font sizes to match climate_normals_xxx.html
+		3) 6/7/15: Added records data to files
+		4) 8/14/15: Added toolbar to go back to main page of climate_records_cvg to bottom
+		5) 11/13/16: KC update header and footer styling (circles instead of rectangles)
+		6) 11/14/16: BH fixed fat blue bar issue
+-->
+
+<!--- // CONTENT STARTS HERE -->
+
+
+<div class="cms-content"><script type='text/javascript'>  
+   "use strict"; 
+   $(function() {    
+      $( "#tabs" ).tabs({      
+         collapsible: true    
+         }); 
+       });
+	   
+// script below will allow to select the initial display tab by id, not by number
+//$('input[name="first"]:checked').val();
+
+     $(document).ready(function(){
+	    
+	    $.fn.tabIndex = function () {
+	        return $(this).parent().find(this).index() - 1; 
+	    };
+	    $.fn.selectTabByID = function (tabID) {
+	        $(this).tabs("option", "active", $('#' + tabID).tabIndex());
+	    };
+	   // $.fn.selectTabByIndex = function (tabIndex) {
+	   //     $(this).tabs("option", "active", tabIndex);
+	  //  };
+
+	  // script below checks variable - if none forces the top listed tab for opened tab
+	var firsttab = null; 
+	if (firsttab == null) {
+		 $("#tabs").tabs();
+	}
+	else {
+		$("#tabs").tabs();
+		 $("#tabs").selectTabByID(firsttab);
+	}
+	
+	
+//   $("#tabs").tabs();
+ //  $("#tabs").selectTabByID('rain');
+ // $("#tabs").selectTabByID(firsttab);
+ //  $("#tabs").tabs("select", firsttab);
+   
+});
+</script>
+
+<script>
+    function toggleTableJan()
+    {
+         var elem=document.getElementById("tabs");
+		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+    function toggleTableJanA()
+    {
+         var elem=document.getElementById("tabs");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableFeb()
+    {
+         var elem=document.getElementById("tabs");
+		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableFebA()
+    {
+         var elem=document.getElementById("tabs");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+</script>
+
+<style type="text/css">
+P.title {
+	font-size: 20px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+}
+IMG.toolbar {
+    border-radius: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	border: 2px;
+	border-color: #000000;
+	background-color:#ffffff;
+	border-width: 1px;
+	border-style: solid;
+	padding: 4px;
+	-webkit-box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+	-moz-box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+	box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	cursor: pointer;	
+}
+IMG.toolbar:hover {
+	-webkit-box-shadow: 0 0 0px rgba(132, 132, 132, .75);
+	-moz-box-shadow: 0 0 0px rgba(132, 132, 132, .75);
+	box-shadow: 0 0 0px rgba(132, 132, 132, .75);
+}
+P.sectiontitle {
+	font-size: 18px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	font-weight: bold;
+}
+P.celltitle {
+	font-size: 16px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	color: white;
+	font-weight: bold;
+	vertical-align: middle;
+}
+P.cellvalue {
+	font-size: 14px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	color: black;
+	font-weight: bold;
+	vertical-align: middle;
+}
+</style>	
+
+<br>
+<p class="title">Cincinnati, Ohio (CVG) Top Ten Lists</p>
+
+<table align="center" id="Header" width="100%" cellpadding="4">
+	<tr>
+		<th bgcolor="#000066">
+		</th>
+	</tr>
+</table>
+
+<table id="Header1" width="100%" cellspacing="8" cellpadding="8">
+	<tbody>
+		<tr>
+			<td width="30%"><a href="http://www.weather.gov/iln/climate_normals_cvg"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_cincin_dark.PNG" width="95%" /> </a></td>
+			<td width="30%"><a href="http://www.weather.gov/iln/climate_normals_cmh"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_colum_light.PNG" width="95%" /> </a></td>
+			<td width="30%"><a href="http://www.weather.gov/iln/climate_normals_day"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_dayton_light.PNG" width="95%" /> </a></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" id="Header2" width="100%" cellpadding="4">
+	<tr>
+		<th bgcolor="#000066">
+		</th>
+	</tr>
+</table>
+
+<p>&nbsp;</p>
+
+<table id="Patchwork" width="100%" cellspacing="8" cellpadding="8">
+	<tbody>
+		<tr>
+			<td width="30%"><a href="#" id="Jan" onclick="toggleTableJan();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_jan_patch.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Feb" onclick="toggleTableFeb();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_feb_patch.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Mar" onclick="toggleTableMar();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_mar_patch.png" width="95%" /></a></td>
+		</tr>
+		<tr>
+			<td><a href="#" id="Mar" onclick="toggleTableApr();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_apr_patch.png" width="95%" /></a></td>
+			<td><a href="#" id="Mar" onclick="toggleTableMay();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_may_patch.png" width="95%" /></a></td>
+			<td><a href="#" id="Mar" onclick="toggleTableJun();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_jun_patch.png" width="95%" /></a></td>
+		</tr>
+		<tr>
+			<td><a href="#" id="Mar" onclick="toggleTableJul();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_jul_patch.png" width="95%" /></a></td>
+			<td><a href="#" id="Mar" onclick="toggleTableAug();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_aug_patch.png" width="95%" /></a></td>
+			<td><a href="#" id="Mar" onclick="toggleTableSep();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_sept_patch.png" width="95%" /></a></td>
+		</tr>
+		<tr>
+			<td><a href="#" id="Mar" onclick="toggleTableOct();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_oct_patch.png" width="95%" /></a></td>
+			<td><a href="#" id="Mar" onclick="toggleTableNov();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_nov_patch.png" width="95%" /></a></td>
+			<td><a href="#" id="Mar" onclick="toggleTableDec();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_dec_patch.png" width="95%" /></a></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" cellpadding="8" cellspacing="8" id="HeaderNext" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td width="30%"><a href="#" id="Jan" onclick="toggleTableJanA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/jan2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Feb" onclick="toggleTableFebA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/feb2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Mar" onclick="toggleTableMarA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/mar2.png" width="95%" /></a></td>
+		</tr>
+		<tr>
+			<td width="30%"><a href="#" id="Apr" onclick="toggleTableAprA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/apr2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="May" onclick="toggleTableMayA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/may2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Jun" onclick="toggleTableJunA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/jun2.png" width="95%" /></a></td>
+		</tr>
+		<tr>
+			<td width="30%"><a href="#" id="Jul" onclick="toggleTableJulA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/jul2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Aug" onclick="toggleTableAugA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/aug2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Sep" onclick="toggleTableSepA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/sep2.png" width="95%" /></a></td>
+		</tr>
+		<tr>
+			<td width="30%"><a href="#" id="Oct" onclick="toggleTableOctA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/oct2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Nov" onclick="toggleTableNovA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/nov2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Dec" onclick="toggleTableDecA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/dec2.png" width="95%" /></a></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>	
+
+<div id="tabs" width="80%" style="display:none">
+<ul>
+	<li><strong><a href="#warm">Warmest</a></strong></li>
+	<li><strong><a href="#cold">Coldest</a></strong></li>
+	<li><strong><a href="#dry">Driest</a></strong></li>
+	<li><strong><a href="#wet">Wettest</a></strong></li>
+	<li><strong><a href="#snow">Snowiest</a></strong></li>
+	<li><strong><a href="#nosnow">Least Snowiest</a></strong></li>
+</ul>
+
+<div id="warm">
+<p class="sectiontitle">Top Ten Warmest Novembers</p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" class="images" style="width: 750px;">
+	<tbody>
+		<tr>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1" rowspan="1"><p class="celltitle">Rank<br />
+			</p></font></td>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">Value/Year<br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#A51B13" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">1<br />
+			</p></font></td>
+			<td bgcolor="#FCB1AB" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#AF231A" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">2<br />
+			</p></font></td>
+			<td bgcolor="#FDBDB7" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#B82D24" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">3<br />
+			</p></font></td>
+			<td bgcolor="#FDC5C0" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#C4372E" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">4<br />
+			</p></font></td>
+			<td bgcolor="#FECECA" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#CF4239" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">5<br />
+			</p></font></td>
+			<td bgcolor="#FDD5D1" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#D94E45" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">6<br />
+			</p></font></td>
+			<td bgcolor="#FEDCD8" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#E0564D" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">7<br />
+			</p></font></td>
+			<td bgcolor="#FEE2DE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#E86057" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">8<br />
+			</p></font></td>
+			<td bgcolor="#FEE9E5" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#F06A61" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">9<br />
+			</p></font></td>
+			<td bgcolor="#FDEEEC" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#F7736A" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">10<br />
+			</p></font></td>
+			<td bgcolor="#FDF5F4" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">Period of Record<br />
+			</p></font></td>
+			<td bgcolor="#CCD1D1" style="vertical-align: middle" align="center" colspan="2"><font size="2"><p class="cellvalue">May 1872 - Present<br />
+			</p></font></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div id="cold">
+<p class="sectiontitle">Top Ten Coldest Novembers</p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" class="images" style="width: 750px;">
+	<tbody>
+		<tr>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1" rowspan="1"><p class="celltitle">Rank<br />
+			</p></font></td>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">Value/Year<br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#3239C2" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">1<br />
+			</p></font></td>
+			<td bgcolor="#9FA3FC" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#3C43CA" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">2<br />
+			</p></font></td>
+			<td bgcolor="#A6AAFE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#454CD1" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">3<br />
+			</p></font></td>
+			<td bgcolor="#ADB0FF" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#4E55D6" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">4<br />
+			</p></font></td>
+			<td bgcolor="#B3B6FD" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#555CDA" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">5<br />
+			</p></font></td>
+			<td bgcolor="#BBBEFE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#6066DF" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">6<br />
+			</p></font></td>
+			<td bgcolor="#C3C6FE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#6A70E5" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">7<br />
+			</p></font></td>
+			<td bgcolor="#C9CCFE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#747AE9" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">8<br />
+			</p></font></td>
+			<td bgcolor="#D1D3FE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#8187EF" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">9<br />
+			</p></font></td>
+			<td bgcolor="#D8DAFE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#9095F5" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">10<br />
+			</p></font></td>
+			<td bgcolor="#E0E2FE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">Period of Record<br />
+			</p></font></td>
+			<td bgcolor="#CCD1D1" style="vertical-align: middle" align="center" colspan="2"><font size="2"><p class="cellvalue">May 1872 - Present<br />
+			</p></font></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div id="dry">
+<p class="sectiontitle">Top Ten Driest Novembers</p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" class="images" style="width: 750px;">
+	<tbody>
+		<tr>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1" rowspan="1"><p class="celltitle">Rank<br />
+			</p></font></td>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">Value/Year<br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#BD9027" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">1<br />
+			</p></font></td>
+			<td bgcolor="#FEDE96" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#C2952D" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">2<br />
+			</p></font></td>
+			<td bgcolor="#FEE09C" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#C69A33" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">3<br />
+			</p></font></td>
+			<td bgcolor="#FEE2A3" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#CBA03A" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">4<br />
+			</p></font></td>
+			<td bgcolor="#FEE4AA" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#D1A641" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">5<br />
+			</p></font></td>
+			<td bgcolor="#FEE6B2" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#D8AD49" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">6<br />
+			</p></font></td>
+			<td bgcolor="#FEE9B9" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#DEB352" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">7<br />
+			</p></font></td>
+			<td bgcolor="#FEEBBF" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#E3B95A" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">8<br />
+			</p></font></td>
+			<td bgcolor="#FEEDC6" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#E8BF63" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">9<br />
+			</p></font></td>
+			<td bgcolor="#FEEFCD" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#EEC66D" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">10<br />
+			</p></font></td>
+			<td bgcolor="#FEF1D5" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">Period of Record<br />
+			</p></font></td>
+			<td bgcolor="#CCD1D1" style="vertical-align: middle" align="center" colspan="2"><font size="2"><p class="cellvalue">May 1872 - Present<br />
+			</p></font></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div id="wet">
+<p class="sectiontitle">Top Ten Wettest Novembers</p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" class="images" style="width: 750px;">
+	<tbody>
+		<tr>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1" rowspan="1"><p class="celltitle">Rank<br />
+			</p></font></td>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">Value/Year<br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#27AF17" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">1<br />
+			</p></font></td>
+			<td bgcolor="#91FD84" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#2EB71D" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">2<br />
+			</p></font></td>
+			<td bgcolor="#98FE8C" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#35BD24" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">3<br />
+			</p></font></td>
+			<td bgcolor="#9DFE91" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#3CC32B" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">4<br />
+			</p></font></td>
+			<td bgcolor="#A2FE97" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#44CB33" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">5<br />
+			</p></font></td>
+			<td bgcolor="#AAFEA0" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#4BD13A" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">6<br />
+			</p></font></td>
+			<td bgcolor="#B0FFA6" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#52D641" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">7<br />
+			</p></font></td>
+			<td bgcolor="#B7FEAE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#58DA48" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">8<br />
+			</p></font></td>
+			<td bgcolor="#BDFDB5" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#5FDF4F" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">9<br />
+			</p></font></td>
+			<td bgcolor="#C6FEBF" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#68E459" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">10<br />
+			</p></font></td>
+			<td bgcolor="#CDFDC7" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">Period of Record<br />
+			</p></font></td>
+			<td bgcolor="#CCD1D1" style="vertical-align: middle" align="center" colspan="2"><font size="2"><p class="cellvalue">May 1872 - Present<br />
+			</p></font></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div id="snow">
+<p class="sectiontitle">Top Ten Snowiest Novembers</p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" class="images" style="width: 750px;">
+	<tbody>
+		<tr>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1" rowspan="1"><p class="celltitle">Rank<br />
+			</p></font></td>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">Value/Year<br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#26A4B6" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">1<br />
+			</p></font></td>
+			<td bgcolor="#9CF1FE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#2DABBD" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">2<br />
+			</p></font></td>
+			<td bgcolor="#A7F3FE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#33B0C2" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">3<br />
+			</p></font></td>
+			<td bgcolor="#ADF4FE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#3AB5C7" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">4<br />
+			</p></font></td>
+			<td bgcolor="#B4F5FE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#40BBCD" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">5<br />
+			</p></font></td>
+			<td bgcolor="#BAF5FE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#47C0D1" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">6<br />
+			</p></font></td>
+			<td bgcolor="#C2F6FE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#50C7D8" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">7<br />
+			</p></font></td>
+			<td bgcolor="#C8F7FE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#5ACFDF" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">8<br />
+			</p></font></td>
+			<td bgcolor="#D0F9FF" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#64D5E5" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">9<br />
+			</p></font></td>
+			<td bgcolor="#D8F9FE" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#6EDBEB" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">10<br />
+			</p></font></td>
+			<td bgcolor="#DEF8FC" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">Period of Record<br />
+			</p></font></td>
+			<td bgcolor="#CCD1D1" style="vertical-align: middle" align="center" colspan="2"><font size="2"><p class="cellvalue">May 1872 - Present<br />
+			</p></font></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<div id="nosnow">
+<p class="sectiontitle">Top Ten Least Snowiest Novembers</p>
+
+<table align="center" border="1" cellpadding="1" cellspacing="1" class="images" style="width: 750px;">
+	<tbody>
+		<tr>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1" rowspan="1"><p class="celltitle">Rank<br />
+			</p></font></td>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">Value/Year<br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#E8860F" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">1<br />
+			</p></font></td>
+			<td bgcolor="#FEC685" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#EC8A14" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">2<br />
+			</p></font></td>
+			<td bgcolor="#FECA8D" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#EE8E1B" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">3<br />
+			</p></font></td>
+			<td bgcolor="#FCCC92" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#F19323" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">4<br />
+			</p></font></td>
+			<td bgcolor="#FDD099" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#F39629" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">5<br />
+			</p></font></td>
+			<td bgcolor="#FED4A0" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#F69B31" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">6<br />
+			</p></font></td>
+			<td bgcolor="#FED9AA" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#F79F39" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">7<br />
+			</p></font></td>
+			<td bgcolor="#FDDBB1" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#F9A442" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">8<br />
+			</p></font></td>
+			<td bgcolor="#FEDFBA" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#FAA849" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">9<br />
+			</p></font></td>
+			<td bgcolor="#FEE2C1" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#FCAD51" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">10<br />
+			</p></font></td>
+			<td bgcolor="#FEE7CC" style="vertical-align: middle" align="center" colspan="1"><p class="cellvalue"><br />
+			</p></font></td>
+		</tr>
+		<tr>
+			<td bgcolor="#424949" style="vertical-align: middle" align="center" colspan="1"><p class="celltitle">Period of Record<br />
+			</p></font></td>
+			<td bgcolor="#CCD1D1" style="vertical-align: middle" align="center" colspan="2"><font size="2"><p class="cellvalue">May 1872 - Present<br />
+			</p></font></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+</div>
+
+<br>
+
+<table width="100%">
+	<tr>
+		<td>
+			<a href="http://www.weather.gov/iln/climate_info"><img class="toolbar" style="width: 750px; height: 30px;" src="http://www.weather.gov/images/iln/climo/climate_page/climopage2.png" />
+		</td>
+	</tr>
+</table>
+
+<p>&nbsp;</p>
+
+<address>Questions/Comments concerning this data should be sent to <a href="mailto:seth.binau@noaa.gov,brian.haines@noaa.gov">Seth Binau and Brian Haines</a>.</address>
+
+<p>&nbsp;</p>
+<!-- // CONTENT ENDS HERE -->

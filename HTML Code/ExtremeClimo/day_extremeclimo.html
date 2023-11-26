@@ -1,0 +1,194 @@
+<!-- // CONTENT STARTS HERE --><!--Name: KC
+	Date: 11/11/2016
+	Purpose: Create a freeze climatology for the big 3 climate sites
+	Version History:
+		1) Start
+	-->
+
+<div class="cms-content"><script type='text/javascript'>  
+   "use strict"; 
+   $(function() {    
+      $( "#tabs" ).tabs({      
+         collapsible: true    
+         }); 
+       });
+	   
+// script below will allow to select the initial display tab by id, not by number
+//$('input[name="first"]:checked').val();
+
+     $(document).ready(function(){
+	    
+	    $.fn.tabIndex = function () {
+	        return $(this).parent().find(this).index() - 1; 
+	    };
+	    $.fn.selectTabByID = function (tabID) {
+	        $(this).tabs("option", "active", $('#' + tabID).tabIndex());
+	    };
+	   // $.fn.selectTabByIndex = function (tabIndex) {
+	   //     $(this).tabs("option", "active", tabIndex);
+	  //  };
+
+	  // script below checks variable - if none forces the top listed tab for opened tab
+	var firsttab = null; 
+	if (firsttab == null) {
+		 $("#tabs").tabs();
+	}
+	else {
+		$("#tabs").tabs();
+		 $("#tabs").selectTabByID(firsttab);
+	}
+	
+	
+//   $("#tabs").tabs();
+ //  $("#tabs").selectTabByID('rain');
+ // $("#tabs").selectTabByID(firsttab);
+ //  $("#tabs").tabs("select", firsttab);
+   
+});
+</script>
+	
+<style type="text/css">
+P.title {
+	font-size: 24px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	font-weight: bold;
+}
+IMG.toolbar {
+    border-radius: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	border: 2px;
+	border-color: #000000;
+	background-color:#ffffff;
+	border-width: 1px;
+	border-style: solid;
+	padding: 4px;
+	-webkit-box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+	-moz-box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+	box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	cursor: pointer;	
+}
+IMG.toolbar:hover {
+	-webkit-box-shadow: 0 0 0px rgba(132, 132, 132, .75);
+	-moz-box-shadow: 0 0 0px rgba(132, 132, 132, .75);
+	box-shadow: 0 0 0px rgba(132, 132, 132, .75);
+}
+P.sectiontitle {
+	font-size: 18px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	font-weight: bold;
+}
+P.celltitle {
+	font-size: 16px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	color: white;
+	font-weight: bold;
+	vertical-align: middle;
+}
+P.cellvalue {
+	font-size: 14px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	color: black;
+	font-weight: bold;
+	vertical-align: middle;
+}
+</style>	
+	
+<br>
+<p class="title">Dayton, Ohio (DAY) Extreme Climatology Page</p>
+<br>
+<table id="Header" width="70%" height="5%" cellspacing="0" cellpadding="1" align="center">
+	<tr>
+		<td><a id="Cincinnati" href="http://www.weather.gov/iln/CVG_ExtremeClimo"><img class="toolbar" style="width: 300px; height: 105px;" src="http://www.weather.gov/images/iln/climo/climate_page/Cincy.png" /></a></td>
+		<td><a id="Columbus" href="http://www.weather.gov/iln/CMH_ExtremeClimo"><img class="toolbar" style="width: 300px; height: 105px;" src="http://www.weather.gov/images/iln/climo/climate_page/Columbus.png" /></a></td>
+	</tr>
+</table>
+<br>
+<br>
+<div id="tabs" width="80%">
+<ul>
+	<li><strong><a href="#90">90°F</a></strong></li>
+	<li><strong><a href="#100">100°F</a></strong></li>
+	<li><strong><a href="#freeze">Freezing</a></strong></li>
+	<li><strong><a href="#subzero">Subzero</a></strong></li>
+</ul>
+
+<div id="90">
+<p class="sectiontitle">90°F+ Climatology For Dayton (DAY)</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" class="images" style="width: 750px;">
+	<tbody>
+		<tr>
+			<td style="text-align: center;"><iframe frameborder="0" height="400" scrolling="yes" src="http://www.weather.gov/media/iln/climo_webpage/90degree_day.pdf" width="740"></iframe></td>
+		</tr>
+		<tr>
+			<td style="text-align: center;"><a href="http://www.weather.gov/media/iln/climo_webpage/90degree_day.pdf" target="_blank"><span style="color:#0000FF;font-size:14px;">90-Degree</span></a></td>
+		</tr>
+</table>
+</div>
+
+<div id="100">
+<p class="sectiontitle">100°F+ Climatology For Dayton (DAY)</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" class="images" style="width: 750px;">
+	<tbody>
+		<tr>
+			<td style="text-align: center;"><iframe frameborder="0" height="400" scrolling="yes" src="http://www.weather.gov/media/iln/climo_webpage/100degree_day.pdf" width="740"></iframe></td>
+		</tr>
+		<tr>
+			<td style="text-align: center;"><a href="http://www.weather.gov/media/iln/climo_webpage/100degree_day.pdf" target="_blank"><span style="color:#0000FF;font-size:14px;">100-Degree</span></a></td>
+		</tr>
+</table>
+</div>
+
+<div id="freeze">
+<p class="sectiontitle">Freeze Climatology For Dayton (DAY)</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" class="images" style="width: 750px;">
+	<tbody>
+		<tr>
+			<td style="text-align: center;"><iframe frameborder="0" height="400" scrolling="yes" src="http://www.weather.gov/media/iln/climo_webpage/32degree_day.pdf" width="740"></iframe></td>
+		</tr>
+		<tr>
+			<td style="text-align: center;"><a href="http://www.weather.gov/media/iln/climo_webpage/32degree_day.pdf" target="_blank"><span style="color:#0000FF;font-size:14px;">32-Degree</span></a></td>
+		</tr>
+</table>
+</div>
+
+<div id="subzero">
+<p class="sectiontitle">Subzero Climatology For Dayton (DAY)</p>
+<table align="center" border="1" cellpadding="1" cellspacing="1" class="images" style="width: 750px;">
+	<tbody>
+		<tr>
+			<td style="text-align: center;"><iframe frameborder="0" height="400" scrolling="yes" src="http://www.weather.gov/media/iln/climo_webpage/0degree_day.pdf" width="740"></iframe></td>
+		</tr>
+		<tr>
+			<td style="text-align: center;"><a href="http://www.weather.gov/media/iln/climo_webpage/0degree_day.pdf" target="_blank"><span style="color:#0000FF;font-size:14px;">0-Degree</span></a></td>
+		</tr>
+</table>
+</div>
+
+</div>
+
+<br>
+
+<table width="100%">
+	<tr>
+		<td>
+			<a href="http://www.weather.gov/iln/climate_info"><img class="toolbar" style="width: 750px; height: 30px;" src="http://www.weather.gov/images/iln/climo/climate_page/climopage2.png" />
+		</td>
+	</tr>
+</table>
+
+<p>&nbsp;</p>
+
+<address>Questions/Comments concerning this data should be sent to <a href="mailto:seth.binau@noaa.gov,brian.haines@noaa.gov">Seth Binau and Brian Haines</a>.</address>
+
+<p>&nbsp;</p>
+</div>
+<!-- // CONTENT ENDS HERE -->

@@ -1,0 +1,877 @@
+<!-- // CONTENT STARTS HERE --><!--Name: Brian Haines
+	Date: 3/16/2015
+	Purpose: Create a top 10 list for CVG
+	Version History:
+		1) 07/03/2015- Tried to upload txt files to new cms server but upload button was not available. Due to this needed to find
+					a work around. Work around was to reference a pdf file and to embed it in the html file. The pdf file can be created
+					via python by it exporting code as a file and then having python convert it to a pdf. The pdf from python can then be
+					r-synced up to the new CMS automatically. Files saved under: Media Management -> Documents -> climo_webpage
+					Referenced all pdf files to new web address in top 10 files-> http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_jan.pdf
+		2) 08/04/2015- Added toolbar at bottom to reference back to main page
+		3) 02/07/2017- Updated toolbar and title style
+	-->
+
+<script>
+    function toggleTableJan()
+    {
+         var elem=document.getElementById("Januarynorm");
+		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+    function toggleTableJanA()
+    {
+         var elem=document.getElementById("Januarynorm");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+			 document.getElementById('Februarynorm').style.display='none';
+			 document.getElementById('Marchnorm').style.display='none';
+			 document.getElementById('Aprilnorm').style.display='none';
+			 document.getElementById('Maynorm').style.display='none';
+			 document.getElementById('Junenorm').style.display='none';
+			 document.getElementById('Julynorm').style.display='none';
+			 document.getElementById('Augustnorm').style.display='none';
+			 document.getElementById('Septembernorm').style.display='none';
+			 document.getElementById('Octobernorm').style.display='none';
+			 document.getElementById('Novembernorm').style.display='none';
+			 document.getElementById('Decembernorm').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableFeb()
+    {
+         var elem=document.getElementById("Februarynorm");
+		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableFebA()
+    {
+         var elem=document.getElementById("Februarynorm");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+			 document.getElementById('Januarynorm').style.display='none';
+			 document.getElementById('Marchnorm').style.display='none';
+			 document.getElementById('Aprilnorm').style.display='none';
+			 document.getElementById('Maynorm').style.display='none';
+			 document.getElementById('Junenorm').style.display='none';
+			 document.getElementById('Julynorm').style.display='none';
+			 document.getElementById('Augustnorm').style.display='none';
+			 document.getElementById('Septembernorm').style.display='none';
+			 document.getElementById('Octobernorm').style.display='none';
+			 document.getElementById('Novembernorm').style.display='none';
+			 document.getElementById('Decembernorm').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+
+	function toggleTableMar()
+    {
+         var elem=document.getElementById("Marchnorm");
+		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableMarA()
+    {
+         var elem=document.getElementById("Marchnorm");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+			 document.getElementById('Januarynorm').style.display='none';
+			 document.getElementById('Februarynorm').style.display='none';
+			 document.getElementById('Aprilnorm').style.display='none';
+			 document.getElementById('Maynorm').style.display='none';
+			 document.getElementById('Junenorm').style.display='none';
+			 document.getElementById('Julynorm').style.display='none';
+			 document.getElementById('Augustnorm').style.display='none';
+			 document.getElementById('Septembernorm').style.display='none';
+			 document.getElementById('Octobernorm').style.display='none';
+			 document.getElementById('Novembernorm').style.display='none';
+			 document.getElementById('Decembernorm').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableApr()
+    {
+         var elem=document.getElementById("Aprilnorm");
+ 		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableAprA()
+    {
+         var elem=document.getElementById("Aprilnorm");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+			 document.getElementById('Januarynorm').style.display='none';
+			 document.getElementById('Februarynorm').style.display='none';
+			 document.getElementById('Marchnorm').style.display='none';
+			 document.getElementById('Maynorm').style.display='none';
+			 document.getElementById('Junenorm').style.display='none';
+			 document.getElementById('Julynorm').style.display='none';
+			 document.getElementById('Augustnorm').style.display='none';
+			 document.getElementById('Septembernorm').style.display='none';
+			 document.getElementById('Octobernorm').style.display='none';
+			 document.getElementById('Novembernorm').style.display='none';
+			 document.getElementById('Decembernorm').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableMay()
+    {
+         var elem=document.getElementById("Maynorm");
+ 		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableMayA()
+    {
+         var elem=document.getElementById("Maynorm");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+			 document.getElementById('Januarynorm').style.display='none';
+			 document.getElementById('Februarynorm').style.display='none';
+			 document.getElementById('Marchnorm').style.display='none';
+			 document.getElementById('Aprilnorm').style.display='none';
+			 document.getElementById('Junenorm').style.display='none';
+			 document.getElementById('Julynorm').style.display='none';
+			 document.getElementById('Augustnorm').style.display='none';
+			 document.getElementById('Septembernorm').style.display='none';
+			 document.getElementById('Octobernorm').style.display='none';
+			 document.getElementById('Novembernorm').style.display='none';
+			 document.getElementById('Decembernorm').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableJun()
+    {
+         var elem=document.getElementById("Junenorm");
+ 		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableJunA()
+    {
+         var elem=document.getElementById("Junenorm");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+			 document.getElementById('Januarynorm').style.display='none';
+			 document.getElementById('Februarynorm').style.display='none';
+			 document.getElementById('Marchnorm').style.display='none';
+			 document.getElementById('Aprilnorm').style.display='none';
+			 document.getElementById('Maynorm').style.display='none';
+			 document.getElementById('Julynorm').style.display='none';
+			 document.getElementById('Augustnorm').style.display='none';
+			 document.getElementById('Septembernorm').style.display='none';
+			 document.getElementById('Octobernorm').style.display='none';
+			 document.getElementById('Novembernorm').style.display='none';
+			 document.getElementById('Decembernorm').style.display='none';
+        } 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableJul()
+    {
+         var elem=document.getElementById("Julynorm");
+ 		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';   
+		} 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableJulA()
+    {
+         var elem=document.getElementById("Julynorm");
+         var hide = elem.style.display =="none";
+         if (hide) {
+			 elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+			 document.getElementById('Januarynorm').style.display='none';
+			 document.getElementById('Februarynorm').style.display='none';
+			 document.getElementById('Marchnorm').style.display='none';
+			 document.getElementById('Aprilnorm').style.display='none';
+			 document.getElementById('Maynorm').style.display='none';
+			 document.getElementById('Junenorm').style.display='none';
+			 document.getElementById('Augustnorm').style.display='none';
+			 document.getElementById('Septembernorm').style.display='none';
+			 document.getElementById('Octobernorm').style.display='none';
+			 document.getElementById('Novembernorm').style.display='none';
+			 document.getElementById('Decembernorm').style.display='none';        
+		} 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableAug()
+    {
+         var elem=document.getElementById("Augustnorm");
+ 		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';    
+		} 
+        else {
+           elem.style.display="none";
+        }
+    }
+	function toggleTableAugA()
+    {
+         var elem=document.getElementById("Augustnorm");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+			 document.getElementById('Januarynorm').style.display='none';
+			 document.getElementById('Februarynorm').style.display='none';
+			 document.getElementById('Marchnorm').style.display='none';
+			 document.getElementById('Aprilnorm').style.display='none';
+			 document.getElementById('Maynorm').style.display='none';
+			 document.getElementById('Junenorm').style.display='none';
+			 document.getElementById('Julynorm').style.display='none';
+			 document.getElementById('Septembernorm').style.display='none';
+			 document.getElementById('Octobernorm').style.display='none';
+			 document.getElementById('Novembernorm').style.display='none';
+			 document.getElementById('Decembernorm').style.display='none';        
+		} 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableSep()
+    {
+         var elem=document.getElementById("Septembernorm");
+ 		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';  
+		} 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableSepA()
+    {
+         var elem=document.getElementById("Septembernorm");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+			 document.getElementById('Januarynorm').style.display='none';
+			 document.getElementById('Februarynorm').style.display='none';
+			 document.getElementById('Marchnorm').style.display='none';
+			 document.getElementById('Aprilnorm').style.display='none';
+			 document.getElementById('Maynorm').style.display='none';
+			 document.getElementById('Junenorm').style.display='none';
+			 document.getElementById('Julynorm').style.display='none';
+			 document.getElementById('Augustnorm').style.display='none';
+			 document.getElementById('Octobernorm').style.display='none';
+			 document.getElementById('Novembernorm').style.display='none';
+			 document.getElementById('Decembernorm').style.display='none';
+		} 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableOct()
+    {
+         var elem=document.getElementById("Octobernorm");
+ 		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';  
+		} 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableOctA()
+    {
+         var elem=document.getElementById("Octobernorm");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+			 document.getElementById('Januarynorm').style.display='none';
+			 document.getElementById('Februarynorm').style.display='none';
+			 document.getElementById('Marchnorm').style.display='none';
+			 document.getElementById('Aprilnorm').style.display='none';
+			 document.getElementById('Maynorm').style.display='none';
+			 document.getElementById('Junenorm').style.display='none';
+			 document.getElementById('Julynorm').style.display='none';
+			 document.getElementById('Augustnorm').style.display='none';
+			 document.getElementById('Septembernorm').style.display='none';
+			 document.getElementById('Novembernorm').style.display='none';
+			 document.getElementById('Decembernorm').style.display='none';
+		} 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableNov()
+    {
+         var elem=document.getElementById("Novembernorm");
+ 		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';  
+		} 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableNovA()
+    {
+         var elem=document.getElementById("Novembernorm");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+			 document.getElementById('Januarynorm').style.display='none';
+			 document.getElementById('Februarynorm').style.display='none';
+			 document.getElementById('Marchnorm').style.display='none';
+			 document.getElementById('Aprilnorm').style.display='none';
+			 document.getElementById('Maynorm').style.display='none';
+			 document.getElementById('Junenorm').style.display='none';
+			 document.getElementById('Julynorm').style.display='none';
+			 document.getElementById('Augustnorm').style.display='none';
+			 document.getElementById('Septembernorm').style.display='none';
+			 document.getElementById('Octobernorm').style.display='none';
+			 document.getElementById('Decembernorm').style.display='none';
+		} 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableDec()
+    {
+         var elem=document.getElementById("Decembernorm");
+ 		 var elemA=document.getElementById("HeaderNext");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 elemA.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';  
+		} 
+        else {
+           elem.style.display="none";
+        }
+    }
+	
+	function toggleTableDecA()
+    {
+         var elem=document.getElementById("Decembernorm");
+         var hide = elem.style.display =="none";
+         if (hide) {
+             elem.style.display="table";
+			 document.getElementById('Header').style.display='none';
+			 document.getElementById('Header1').style.display='none';
+			 document.getElementById('Header2').style.display='none';
+			 document.getElementById('Patchwork').style.display='none';
+			 document.getElementById('Januarynorm').style.display='none';
+			 document.getElementById('Februarynorm').style.display='none';
+			 document.getElementById('Marchnorm').style.display='none';
+			 document.getElementById('Aprilnorm').style.display='none';
+			 document.getElementById('Maynorm').style.display='none';
+			 document.getElementById('Junenorm').style.display='none';
+			 document.getElementById('Julynorm').style.display='none';
+			 document.getElementById('Augustnorm').style.display='none';
+			 document.getElementById('Septembernorm').style.display='none';
+			 document.getElementById('Octobernorm').style.display='none';
+			 document.getElementById('Novembernorm').style.display='none';
+		} 
+        else {
+           elem.style.display="none";
+        }
+    }
+</script>
+
+<style type="text/css">
+P.title {
+	font-size: 24px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	font-weight: bold;
+}
+IMG.toolbar {
+    border-radius: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+	border: 2px;
+	border-color: #000000;
+	background-color:#ffffff;
+	border-width: 1px;
+	border-style: solid;
+	padding: 4px;
+	-webkit-box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+	-moz-box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+	box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	cursor: pointer;	
+}
+IMG.toolbar:hover {
+	-webkit-box-shadow: 0 0 0px rgba(132, 132, 132, .75);
+	-moz-box-shadow: 0 0 0px rgba(132, 132, 132, .75);
+	box-shadow: 0 0 0px rgba(132, 132, 132, .75);
+}
+P.sectiontitle {
+	font-size: 18px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	font-weight: bold;
+}
+P.celltitle {
+	font-size: 16px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	color: white;
+	font-weight: bold;
+	vertical-align: middle;
+}
+P.cellvalue {
+	font-size: 14px;
+	font-family: Tahoma, Geneva, sans-serif;
+	TEXT-ALIGN: center;
+	color: black;
+	font-weight: bold;
+	vertical-align: middle;
+}
+</style>	
+
+<p class="title">
+	Cincinnati, Ohio (CVG) Top Ten List
+</p>
+
+<table align="center" id="Header" width="100%" cellpadding="4">
+	<tr>
+		<th bgcolor="#000066">
+		</th>
+	</tr>
+</table>
+
+<table id="Header1" width="100%" cellspacing="8" cellpadding="8">
+	<tbody>
+		<tr>
+			<td width="30%"><a href="http://www.weather.gov/iln/climate_top10_cvg"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_cincin_dark.PNG" width="95%" /> </a></td>
+			<td width="30%"><a href="http://www.weather.gov/iln/climate_top10_cmh"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_colum_light.PNG" width="95%" /> </a></td>
+			<td width="30%"><a href="http://www.weather.gov/iln/climate_top10_day"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_dayton_light.PNG" width="95%" /> </a></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" id="Header2" width="100%" cellpadding="4">
+	<tr>
+		<th bgcolor="#000066">
+		</th>
+	</tr>
+</table>
+
+<table id="Patchwork" width="100%" cellspacing="8" cellpadding="8">
+	<tbody>
+		<tr>
+			<td width="30%"><a href="#" id="Jan" onclick="toggleTableJan();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_jan_patch.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Feb" onclick="toggleTableFeb();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_feb_patch.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Mar" onclick="toggleTableMar();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_mar_patch.png" width="95%" /></a></td>
+		</tr>
+		<tr>
+			<td><a href="#" id="Mar" onclick="toggleTableApr();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_apr_patch.png" width="95%" /></a></td>
+			<td><a href="#" id="Mar" onclick="toggleTableMay();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_may_patch.png" width="95%" /></a></td>
+			<td><a href="#" id="Mar" onclick="toggleTableJun();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_jun_patch.png" width="95%" /></a></td>
+		</tr>
+		<tr>
+			<td><a href="#" id="Mar" onclick="toggleTableJul();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_jul_patch.png" width="95%" /></a></td>
+			<td><a href="#" id="Mar" onclick="toggleTableAug();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_aug_patch.png" width="95%" /></a></td>
+			<td><a href="#" id="Mar" onclick="toggleTableSep();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_sept_patch.png" width="95%" /></a></td>
+		</tr>
+		<tr>
+			<td><a href="#" id="Mar" onclick="toggleTableOct();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_oct_patch.png" width="95%" /></a></td>
+			<td><a href="#" id="Mar" onclick="toggleTableNov();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_nov_patch.png" width="95%" /></a></td>
+			<td><a href="#" id="Mar" onclick="toggleTableDec();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/cli_dec_patch.png" width="95%" /></a></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" cellpadding="8" cellspacing="8" id="HeaderNext" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td width="30%"><a href="#" id="Jan" onclick="toggleTableJanA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/jan2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Feb" onclick="toggleTableFebA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/feb2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Mar" onclick="toggleTableMarA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/mar2.png" width="95%" /></a></td>
+		</tr>
+		<tr>
+			<td width="30%"><a href="#" id="Apr" onclick="toggleTableAprA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/apr2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="May" onclick="toggleTableMayA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/may2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Jun" onclick="toggleTableJunA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/jun2.png" width="95%" /></a></td>
+		</tr>
+		<tr>
+			<td width="30%"><a href="#" id="Jul" onclick="toggleTableJulA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/jul2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Aug" onclick="toggleTableAugA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/aug2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Sep" onclick="toggleTableSepA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/sep2.png" width="95%" /></a></td>
+		</tr>
+		<tr>
+			<td width="30%"><a href="#" id="Oct" onclick="toggleTableOctA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/oct2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Nov" onclick="toggleTableNovA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/nov2.png" width="95%" /></a></td>
+			<td width="30%"><a href="#" id="Dec" onclick="toggleTableDecA();"><img class="toolbar" src="http://www.weather.gov/images/iln/climo/climate_page/dec2.png" width="95%" /></a></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="1" cellpadding="5" cellspacing="3" id="Januarynorm" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td bgcolor="#ffffcf" colspan="5" style="vertical-align:middle;text-align:center">
+			<p><font size="+1"><strong>Cincinnati&#39;s Top 10 wettest, driest, warmest, and coolest Januarys</strong></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td><object data="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_jan.pdf#zoom=100&amp;messages=0&amp;navpanes=0" height="500" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_jan.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="1" cellpadding="5" cellspacing="3" id="Februarynorm" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td bgcolor="#ffffcf" colspan="5" style="vertical-align:middle;text-align:center">
+			<p><font size="+1"><strong>Cincinnati&#39;s Top 10 wettest, driest, warmest, and coolest February&#39;s</strong></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td><object data="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_feb.pdf#zoom=100&amp;messages=0&amp;navpanes=0" height="500" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_feb.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="1" cellpadding="5" cellspacing="3" id="Marchnorm" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td bgcolor="#ffffcf" colspan="5" style="vertical-align:middle;text-align:center">
+			<p><font size="+1"><strong>Cincinnati&#39;s Top 10 wettest, driest, warmest, and coolest Marchs</strong></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td><object data="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_mar.pdf#zoom=100&amp;messages=0&amp;navpanes=0" height="500" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_mar.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="1" cellpadding="5" cellspacing="3" id="Aprilnorm" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td bgcolor="#ffffcf" colspan="5" style="vertical-align:middle;text-align:center">
+			<p><font size="+1"><strong>Cincinnati&#39;s Top 10 wettest, driest, warmest, and coolest Aprils</strong></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td><object data="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_apr.pdf#zoom=100&amp;messages=0&amp;navpanes=0" height="500" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_apr.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="1" cellpadding="5" cellspacing="3" id="Maynorm" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td bgcolor="#ffffcf" colspan="5" style="vertical-align:middle;text-align:center">
+			<p><font size="+1"><strong>Cincinnati&#39;s Top 10 wettest, driest, warmest, and coolest Mays</strong></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td><object data="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_may.pdf#zoom=100&amp;messages=0&amp;navpanes=0" height="500" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_may.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="1" cellpadding="5" cellspacing="3" id="Junenorm" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td bgcolor="#ffffcf" colspan="5" style="vertical-align:middle;text-align:center">
+			<p><font size="+1"><strong>Cincinnati&#39;s Top 10 wettest, driest, warmest, and coolest Junes</strong></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td><object data="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_jun.pdf#zoom=100&amp;messages=0&amp;navpanes=0" height="500" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_jun.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="1" cellpadding="5" cellspacing="3" id="Julynorm" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td bgcolor="#ffffcf" colspan="5" style="vertical-align:middle;text-align:center">
+			<p><font size="+1"><strong>Cincinnati&#39;s Top 10 wettest, driest, warmest, and coolest Julys</strong></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td><object data="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_jul.pdf#zoom=100&amp;messages=0&amp;navpanes=0" height="500" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_jul.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="1" cellpadding="5" cellspacing="3" id="Augustnorm" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td bgcolor="#ffffcf" colspan="5" style="vertical-align:middle;text-align:center">
+			<p><font size="+1"><strong>Cincinnati&#39;s Top 10 wettest, driest, warmest, and coolest Augusts</strong></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td><object data="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_aug.pdf#zoom=100&amp;messages=0&amp;navpanes=0" height="500" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_aug.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="1" cellpadding="5" cellspacing="3" id="Septembernorm" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td bgcolor="#ffffcf" colspan="5" style="vertical-align:middle;text-align:center">
+			<p><font size="+1"><strong>Cincinnati&#39;s Top 10 wettest, driest, warmest, and coolest Septembers</strong></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td><object data="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_sept.pdf#zoom=100&amp;messages=0&amp;navpanes=0" height="500" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_sept.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="1" cellpadding="5" cellspacing="3" id="Octobernorm" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td bgcolor="#ffffcf" colspan="5" style="vertical-align:middle;text-align:center">
+			<p><font size="+1"><strong>Cincinnati&#39;s Top 10 wettest, driest, warmest, and coolest Octobers</strong></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td><object data="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_oct.pdf#zoom=100&amp;messages=0&amp;navpanes=0" height="500" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_oct.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="1" cellpadding="5" cellspacing="3" id="Novembernorm" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td bgcolor="#ffffcf" colspan="5" style="vertical-align:middle;text-align:center">
+			<p><font size="+1"><strong>Cincinnati&#39;s Top 10 wettest, driest, warmest, and coolest Novembers</strong></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td><object data="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_nov.pdf#zoom=100&amp;messages=0&amp;navpanes=0" height="500" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_nov.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+	</tbody>
+</table>
+
+<table align="center" border="1" cellpadding="5" cellspacing="3" id="Decembernorm" style="display:none" width="100%">
+	<tbody>
+		<tr>
+			<td bgcolor="#ffffcf" colspan="5" style="vertical-align:middle;text-align:center">
+			<p><font size="+1"><strong>Cincinnati&#39;s Top 10 wettest, driest, warmest, and coolest Decembers</strong></font></p>
+			</td>
+		</tr>
+		<tr>
+			<td><object data="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_dec.pdf#zoom=100&amp;messages=0&amp;navpanes=0" height="500" type="application/pdf" width="100%">
+			<p>It appears your Web browser is not configured to display PDF files. No worries, just <a href="http://www.weather.gov/media/iln/climo_webpage/climate_top10_cvg_dec.pdf">click here to download the PDF file.</a></p>
+			</object></td>
+		</tr>
+	</tbody>
+</table>
+
+<table width="100%">
+	<tr>
+		<td>
+			<a href="http://www.weather.gov/iln/climate_info"><img class="toolbar" style="width: 750px; height: 30px;" src="http://www.weather.gov/images/iln/climo/climate_page/climopage2.png" />
+		</td>
+	</tr>
+</table>
+<p>&nbsp;</p>
+
+<address>Questions/Comments concerning this data should be sent to <a href="mailto:seth.binau@noaa.gov,brian.haines@noaa.gov">Seth Binau and Brian Haines</a>.</address>
+<!-- // CONTENT ENDS HERE -->
