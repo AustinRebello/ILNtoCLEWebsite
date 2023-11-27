@@ -1,11 +1,13 @@
 ### HEADER ###
 # Name: Brian Haines
+# Modified By: Austin Rebello
 # Date: 8/11/2015
 # Purpose: Create a script that requests mysql data and generates html file
 # Version/ update history:
 #    1) 08-08-15: Script completed!
 #    2) 01-22-17: Script updated to incorporate Kristens new design changes
 #    3) 02-27-18: Added code for least snowiest months and sort by year (newest to oldest)
+#    4) 11-26-23: Converted to Python 3 and to NWS CLE
 ### --- ###
 
 ### Import needed modules ###
