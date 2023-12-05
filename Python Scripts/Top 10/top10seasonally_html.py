@@ -306,7 +306,7 @@ def htmlSite(site, porStart):
                 top10.append(Footer)
 
                 ## Get Top 10 snowiest ##
-                query = ("SELECT Year, Season, Seasonal_Snow_Total FROM climate.seasonally_"+site+" where Season = '" + season[i].upper() + "' AND Seasonal_Snow_Total != 'M' ORDER BY Seasonal_Snow_Total+0 DESC, Year DESC;")
+                query = ("SELECT Year, Season, Seasonal_Snow_Total FROM climate.seasonally_"+site+" where Season = '" + season[i].upper() + "' AND Seasonal_Snow_Total != 'M' ORDER BY Case Seasonal_Snow_Total  WHEN 'T' THEN 0.0000001 else Seasonal_Snow_Total+0 END DESC, Year DESC;")
                 cursor.execute(query)
                 row = cursor.fetchone()
                 top10.append(Header_Snow)
@@ -335,7 +335,7 @@ def htmlSite(site, porStart):
 
 
                 ## Get Top 10 least snowiest ##
-                query = ("SELECT Year, Season, Seasonal_Snow_Total FROM climate.seasonally_"+site+" where Season = '" + season[i].upper() + "' AND Seasonal_Snow_Total != 'M' ORDER BY Seasonal_Snow_Total+0, Year DESC;")
+                query = ("SELECT Year, Season, Seasonal_Snow_Total FROM climate.seasonally_"+site+" where Season = '" + season[i].upper() + "' AND Seasonal_Snow_Total != 'M' ORDER BY Case Seasonal_Snow_Total  WHEN 'T' THEN 0.0000001 else Seasonal_Snow_Total+0 END ASC, Year DESC;")
                 cursor.execute(query)
                 row = cursor.fetchone()
                 top10.append(Header_LeastSnow)

@@ -331,7 +331,7 @@ def htmlSite(site, porStart):
                                                 '</p></td>' + '\n')
                         
                 top10.append('<td bgcolor=' + color_value[dcv] + ' style="vertical-align: middle" align="center" colspan="1">'
-                                '<p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;" >'  + year + '<br />' +'\n'+
+                                '<p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;" >'  + (str(int(year)-1)) + '-' + year[2:] + '<br />' +'\n'+
                                 '</p></td></tr>' + '\n')
                 row = cursor.fetchone()    
         top10.append(Footer)
@@ -360,7 +360,7 @@ def htmlSite(site, porStart):
                                                 '</p></td>' + '\n')
                         
                 top10.append('<td bgcolor=' + color_value[dcv] + ' style="vertical-align: middle" align="center" colspan="1">'
-                                '<p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;" >'  + year + '<br />' +'\n'+
+                                '<p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;" >'  + (str(int(year)-1)) + '-' + year[2:] + '<br />' +'\n'+
                                 '</p></td></tr>' + '\n')
                 row = cursor.fetchone()    
         top10.append(Footer)

@@ -564,6 +564,42 @@ def htmlSite(site):
     snowmonth.append('<br />'+ '\n' +
                         '</p></td>'+ '\n' +
                         '</tr>'+ '\n')
+    
+    # Most in May
+    month_totals_may = str(month_totals[7])
+    month_totals_mayyr_final = month_totals_may[4:11].strip(" ( , ' ")
+    month_totals_maynum_final = month_totals_may[12:21].strip(" , ( u ' ) ")
+    snowmonth.append('<tr>'+ '\n' +
+                        '<td bgcolor="#1F618D" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most in May<br />'+ '\n' +
+                	'</p></td>'+ '\n' +
+                    	'<td bgcolor="#7FB3D5" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;">')
+    snowmonth.append(month_totals_mayyr_final)
+    snowmonth.append('<br />'+'</p></td>'+ '<td bgcolor="#7FB3D5" style="vertical-align: middle" align="center" colspan="2"><p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;">')
+    snowmonth.append(month_totals_maynum_final)
+    if (month_totals_maynum_final != 'T'):
+        snowmonth.append('"')
+    snowmonth.append('<br />'+ '\n' +
+                        '</p></td>'+ '\n' +
+                        '</tr>'+ '\n')
+    # - #
+
+    # Least in May
+    least_month_totals_may = str(least_month_totals[7])
+    least_month_totals_mayyr_final = least_month_totals_may[4:11].strip(" ( , ' ")
+    least_month_totals_maynum_final = least_month_totals_may[12:21].strip(" , ( u ' ) ")
+    snowmonth.append('<tr>'+ '\n' +
+                        '<td bgcolor="#1F618D" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Least in May<br />'+ '\n' +                	'</p></td>'+ '\n' +
+                    	'<td bgcolor="#7FB3D5" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;">')
+    snowmonth.append(least_month_totals_mayyr_final)
+    snowmonth.append('<br />'+'</p></td>'+ '<td bgcolor="#7FB3D5" style="vertical-align: middle" align="center" colspan="2"><p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;">')
+    snowmonth.append(least_month_totals_maynum_final)
+    if (least_month_totals_maynum_final != 'T'):
+        snowmonth.append('"')
+    if star_needed_least[7] == 1:
+        snowmonth.append(' *')
+    snowmonth.append('<br />'+ '\n' +
+                        '</p></td>'+ '\n' +
+                        '</tr>'+ '\n')
     # END SNOW MONTH #
 
     # Snow Year #
@@ -837,7 +873,7 @@ def htmlSite(site):
 
         
     ### Step 3: Export file as .html ###
-    print(' Writing data to files... ')
+    print(' Writing data to files for ' + site + '...')
 
     # Open output files for writing #
     # Monthly files
@@ -872,13 +908,11 @@ def htmlSite(site):
     final_snowyear.close()
 
     # Create monthly pdf files #
-    print(' Now creating monthly pdf files')
-    pdfkit.from_file('../../PDFTxtFiles/Snowfall/SnowSumMonth_'+site+'.html', '../../PDFTxtFiles/Snowfall/SnowSumYear_'+site+'.pdf')
+    print(' Now creating monthly pdf files for '+site)
+    pdfkit.from_file('../../PDFTxtFiles/Snowfall/SnowSumMonth_'+site+'.html', '../../PDFTxtFiles/Snowfall/SnowSumMonth_'+site+'.pdf')
   
-    print(' Now creating yearly pdf files')
+    print(' Now creating yearly pdf files for ' + site)
     pdfkit.from_file('../../PDFTxtFiles/Snowfall/SnowSumYear_'+site+'.html', '../../PDFTxtFiles/Snowfall/SnowSumYear_'+site+'.pdf')
-
-    print(' Script completed and files genereated... ')
 
     ### --- ###
     # Close Connection
@@ -886,6 +920,7 @@ def htmlSite(site):
     cnx.close()
 
 
-
 for site in sites:
     htmlSite(site)
+    
+print(' Script completed and files genereated... ')

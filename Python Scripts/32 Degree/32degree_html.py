@@ -148,7 +148,7 @@ def htmlSite(site):
         month_totals.append(str(month_number[monum]) + "," + str(row))
     # - #
     
-    # Most 32 degree day highs in a month-
+    """# Most 32 degree day highs in a month-
     month_high_totals = []
     # Get most 32 degree days in October, November, December, January, February, March, April #
     month_number = ('10','11','12','01','02','03','04')
@@ -160,7 +160,7 @@ def htmlSite(site):
         row = cursor.fetchone()
         #print ( str(month_number[monum]) + str(row) )
         month_high_totals.append(str(month_number[monum]) + "," + str(row))
-    # - #
+    # - #"""
     
     # Most 32 degree days in a year-
     data_32_year = str(data_32_year)
@@ -340,7 +340,7 @@ def htmlSite(site):
     month_totals_octyr_final = month_totals_oct[4:11].strip("' ,")
     month_totals_octnum_final = month_totals_oct[12:21].strip("u ' ) ")
     degree32.append('<tr>'+ '\n' +
-                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing lows in October<br />'+ '\n' +
+                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing Days in October<br />'+ '\n' +
                 	'</p></td>'+ '\n' +
                     	'<td bgcolor="#C39BD3" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;">')
     degree32.append(month_totals_octyr_final)
@@ -355,7 +355,7 @@ def htmlSite(site):
     month_totals_novyr_final = month_totals_nov[4:11].strip("' ,")
     month_totals_novnum_final = month_totals_nov[12:21].strip("u ' ) ")
     degree32.append('<tr>'+ '\n' +
-                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing lows in November<br />'+ '\n' +
+                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing Days in November<br />'+ '\n' +
                 	'</p></td>'+ '\n' +
                     	'<td bgcolor="#C39BD3" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;">')
     degree32.append(month_totals_novyr_final)
@@ -371,7 +371,7 @@ def htmlSite(site):
     month_totals_decyr_final = month_totals_dec[4:11].strip("' ,")
     month_totals_decnum_final = month_totals_dec[12:21].strip("u ' ) ")
     degree32.append('<tr>'+ '\n' +
-                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing lows in December<br />'+ '\n' +
+                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing Days in December<br />'+ '\n' +
                 	'</p></td>'+ '\n' +
                     	'<td bgcolor="#C39BD3" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;">')
     degree32.append(month_totals_decyr_final)
@@ -387,7 +387,7 @@ def htmlSite(site):
     month_totals_janyr_final = month_totals_jan[4:11].strip("' ,")
     month_totals_jannum_final = month_totals_jan[12:21].strip("u ' ) ")
     degree32.append('<tr>'+ '\n' +
-                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing lows in January<br />'+ '\n' +
+                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing Days in January<br />'+ '\n' +
                 	'</p></td>'+ '\n' +
                     	'<td bgcolor="#C39BD3" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;">')
     degree32.append(month_totals_janyr_final)
@@ -403,7 +403,7 @@ def htmlSite(site):
     month_totals_febyr_final = month_totals_feb[4:11].strip("' ,")
     month_totals_febnum_final = month_totals_feb[12:21].strip("u ' ) ")
     degree32.append('<tr>'+ '\n' +
-                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing lows in February<br />'+ '\n' +
+                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing Days in February<br />'+ '\n' +
                 	'</p></td>'+ '\n' +
                     	'<td bgcolor="#C39BD3" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;">')
     degree32.append(month_totals_febyr_final)
@@ -419,7 +419,7 @@ def htmlSite(site):
     month_totals_maryr_final = month_totals_mar[4:11].strip("' ,")
     month_totals_marnum_final = month_totals_mar[12:21].strip("u ' ) ")
     degree32.append('<tr>'+ '\n' +
-                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing lows in March<br />'+ '\n' +
+                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing Days in March<br />'+ '\n' +
                 	'</p></td>'+ '\n' +
                     	'<td bgcolor="#C39BD3" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;">')
     degree32.append(month_totals_maryr_final)
@@ -435,7 +435,7 @@ def htmlSite(site):
     month_totals_apryr_final = month_totals_apr[4:11].strip("' ,")
     month_totals_aprnum_final = month_totals_apr[12:21].strip("u ' ) ")
     degree32.append('<tr>'+ '\n' +
-                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing lows in April<br />'+ '\n' +
+                        '<td bgcolor="#884EA0" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 16px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: white;font-weight: bold;vertical-align: middle;">Most Subfreezing Days in April<br />'+ '\n' +
                 	'</p></td>'+ '\n' +
                     	'<td bgcolor="#C39BD3" style="vertical-align: middle" align="center" colspan="1"><p style="font-size: 14px;font-family: Tahoma, Geneva, sans-serif;TEXT-ALIGN: center;color: black;font-weight: bold;vertical-align: middle;">')
     degree32.append(month_totals_apryr_final)
@@ -445,7 +445,7 @@ def htmlSite(site):
                         '</p></td>'+ '\n' +
                         '</tr>'+ '\n') 
     
-    # Most 32 degree day highs October #
+    """# Most 32 degree day highs October #
     # CVG
     month_high_totals_oct = str(month_high_totals[0])
     month_high_totals_octyr_final = month_high_totals_oct[4:11].strip("' ,")
@@ -555,9 +555,9 @@ def htmlSite(site):
     degree32.append(month_high_totals_aprnum_final)
     degree32.append('<br />'+ '\n' +
                         '</p></td>'+ '\n' +
-                        '</tr>'+ '\n')
+                        '</tr>'+ '\n')"""
     
-    # Most 32 degree day lows in a year #
+    # Most 32 degree day in a year #
     # CVG
     most32_per_year = (data_32_most_final)
     for j in range(len(most32_per_year)):
